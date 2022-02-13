@@ -27,8 +27,11 @@ def handle(client):
     while True:
         try:
             message = client.recv(1024)
+            abb = f"{nicknames[clients.index(client)].decode()} says {message.decode()}"
             print(f"{nicknames[clients.index(client)]} says {message}")
             broadcast(message)
+            writer = threading.Thread(target=file_write, args=(abb,))
+            writer.start()
         except:
             index = clients.index(client)
             clients.remove(client)
