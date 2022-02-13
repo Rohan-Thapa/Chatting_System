@@ -12,6 +12,13 @@ server.listen()
 clients = []
 nicknames = []
 
+def file_write(msg):
+    try:
+        with open("data.txt", "a+") as fw:
+            fw.write(msg)
+    except:
+        print("Error occured while handeling the file.")
+
 def broadcast(message):
     for client in clients:
         client.send(message)
