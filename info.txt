@@ -1,0 +1,5 @@
+Welcome to Chatting System by Ineffable.
+Configuration Required:
+- Should have Python 3+ installed
+- Should have processor of atleast 4 core due to thread creation
+- Should have installed tkinter properly and should not be modified
