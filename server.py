@@ -62,6 +62,10 @@ def receive():
             print("Error had occured!")
             break
 
-print("Server running...")
+with open("info.txt", "r") as f:
+    about = f.readlines()
+    for detail in about:
+        print(detail, end="")
+print("\n\nServer running...")
 receive()
 
